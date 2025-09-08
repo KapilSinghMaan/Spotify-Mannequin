@@ -1,9 +1,17 @@
-.spotify-left{
-    width: 25vw;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+     font-family: "Roboto", sans-serif;
 }
 
-.library{
-    min-height: 75vh;
+.spotify-left{
+    width: 25vw;
+    min-height: 87vh;
+}
+
+.searchbar input:focus{
+    border: none;
+    outline: none;
 }
 
 .spotify-right{
@@ -17,19 +25,23 @@
 }
 
 .bg-grey{
-    background-color: #444;
+    background-color: #121212;
 }
 
 .invert-color{
     filter: invert(1);
 }
 
+.invert-half{
+    filter: invert(0.7);
+}
+
 .small-font{
-    font-size: 13px;
+    font-size: 8px;
 }
 
 .very-small{
-    font-size: 8px;
+    font-size: 6px;
 }
 
 /* Utility CSS end */
