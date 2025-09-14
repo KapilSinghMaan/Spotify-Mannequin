@@ -4,18 +4,28 @@
      font-family: "Roboto", sans-serif;
 }
 
-.spotify-left{
-    width: 20vw;
-    min-height: 87vh;
-}
-
 .searchbar input:focus{
     border: none;
     outline: none;
 }
 
+.spotify-left{
+    width: 23vw;
+    min-height: 87vh;
+}
+
+.songList{
+    height: 70vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.songList-info{
+    width: 85%;
+}
+
 .spotify-right{
-    width: 80vw;
+    width: 77vw;
 }
 
 .spotify-right .card{
@@ -32,10 +42,19 @@
     right: 1em;
 }
 
+.playbar {
+    background-color: rgb(118 124 118);
+}
+
 /* Utility CSS start */
 
 .checking{
     border: 2px solid red;
+}
+
+.border-icon {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #000;
 }
 
 .bg-grey{
