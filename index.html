@@ -31,7 +31,7 @@
                     class="ms-2 searchbar bg-grey rounded-5 d-flex align-items-center justify-content-center py-1 px-2">
                     <img src="images/search.svg" alt="search" class="invert-half ms-2 my-2" height="30">
                     <input type="text" placeholder="What do you want play?"
-                        class="bg-transparent border-0 fs-5 pe-5 text-white mx-5"> <img src="images/browse.svg"
+                        class="bg-transparent border-0 fs-5 text-white"> <img src="images/browse.svg"
                         alt="browse" height="30" class="border-start ps-2 ms-1 invert-half mt-1">
                 </div>
             </div>
@@ -45,11 +45,11 @@
 
                 <div class="ms-4">
                     <img src="images/install.svg" alt="install" height="17" class="invert-half"> <span
-                        class="text-secondary fw-bold">Install App</span>
+                        class="text-secondary fw-bold install-app">Install App</span>
                 </div>
 
                 <div class="ms-2">
-                    <button class="border-0 bg-transparent text-secondary fw-bold">Sign Up</button>
+                    <button class="border-0 bg-transparent text-secondary fw-bold sign-up">Sign Up</button>
                     <button class="rounded-5 border-0 fw-bold fs-5 py-2 px-4">Login</button>
                 </div>
             </div>
@@ -71,7 +71,7 @@
 
                 <div class="songList">
                     <ul class="list-unstyled">
-                        
+
                     </ul>
                 </div>
 
@@ -96,67 +96,72 @@
             <!-- right songs start -->
 
             <div class="spotify-right position-relative m-1 bg-grey rounded-2 ">
-                <div class="row m-0">
+                 <div class="row m-0"> 
                     <div class="card-group gap-1 mt-3">
                         <div class="card rounded-3 px-1 position-relative">
-                            <div class="card-play"><p class="position-absolute p-2 bg-success rounded-circle d-inline"><i class="fa-solid fa-play"></i></p></div>
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c1.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Maruti</h5>
-                                <p class="card-text text-white small">Dhanda Nyoliwala, Ron Likhari, Miki Malang</p>
+                                <p class="card-text text-white ">Dhanda Nyoliwala, Ron Likhari, Miki Malang</p>
                             </div>
                         </div>
                         <div class="card rounded-3 px-1">
                             <img src="images/c2.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Beete Lamhein Lofi Mix(From "The Train")</h5>
-                                <p class="card-text text-white small">KK</p>
+                                <p class="card-text text-white ">KK</p>
                             </div>
                         </div>
                         <div class="card rounded-3 px-1">
                             <img src="images/c3.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Shree Hanuman Chalisa</h5>
-                                <p class="card-text text-white small">Hariharan</p>
+                                <p class="card-text text-white ">Hariharan</p>
                             </div>
                         </div>
                         <div class="card rounded-3 px-1">
                             <img src="images/c4.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Hanuman Chalisa (Lo-fi)</h5>
-                                <p class="card-text text-white small">Rasraj Ji Maharaj</p>
+                                <p class="card-text text-white">Rasraj Ji Maharaj</p>
                             </div>
                         </div>
                         <div class="card rounded-3 px-1">
                             <img src="images/c5.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">For a Reason</h5>
-                                <p class="card-text text-white small">Karan Aujla, Ikky</p>
+                                <p class="card-text text-white ">Karan Aujla, Ikky</p>
                             </div>
                         </div>
                         <div class="card rounded-3 px-1">
                             <img src="images/c6.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Balenci</h5>
-                                <p class="card-text text-white small">Shubh</p>
+                                <p class="card-text text-white">Shubh</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <!-- playbar start -->
 
                 <div class="row m-0 p-2 pb-4 playbar position-absolute rounded-5 w-100">
-                    <div class="seekbar bg-light border border-1 border-light rounded-5 position-absolute">
-                        <div class="seekbar-circle position-absolute"></div>
+                    <div class="seekbar bg-light border border-1 border-light rounded-5 position-absolute cursor-pointer">
+                        <div class="seekbar-circle position-absolute cursor-pointer"></div>
                     </div>
-                    <div class="songinfo"></div>
-                    <div class="controls d-flex align-items-center justify-content-center gap-3 fs-4 ">
-                        <i class="fa-solid fa-backward-step border-icon"></i>
-                        <i class="fa-solid fa-play border-icon"></i>
-                        <i class="fa-solid fa-forward-step border-icon"></i>
+                    <div class="songInfo d-flex justify-content-center align-items-center">
+                        <div class="songname"></div>
+                        <div class="d-flex controls align-items-center gap-3 fs-4 ">
+                            <i class="fa-solid fa-backward-step border-icon cursor-pointer"></i>
+                            <i id="play" class="fa-solid fa-play border-icon cursor-pointer"></i>
+                            <i class="fa-solid fa-forward-step border-icon cursor-pointer"></i>
+                        </div>
+                        <div class="songtime d-flex align-items-center justify-content-end"></div>
                     </div>
-                    <div class="songtime"></div>
                 </div>
 
                 <!-- playbar end -->
