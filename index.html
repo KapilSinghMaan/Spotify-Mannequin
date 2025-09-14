@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Mannequin</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -17,6 +18,9 @@
 <body class="bg-black">
 
     <div class="container-fluid p-0">
+
+        <!-- header start -->
+
         <div class="py-1 px-2 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center py-2">
                 <div class="ms-2"><img src="images/logo.svg" alt="Spotify" height="30" class="invert-color"></div>
@@ -50,7 +54,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- header end -->
+
         <div class="spotify-main d-flex">
+
+            <!-- left library start -->
+
             <div class="spotify-left m-1 library position-relative rounded-2 bg-grey p-2 text-white">
 
                 <ul class="list-unstyled">
@@ -58,6 +68,13 @@
                         Library
                     </li>
                 </ul>
+
+                <div class="songList">
+                    <ul class="list-unstyled">
+                        
+                    </ul>
+                </div>
+
                 <div class="library-footer d-flex flex-wrap gap-2 position-absolute bottom-0">
                     <a href="https://www.spotify.com/in-en/legal/"
                         class="text-decoration-none text-secondary small m-0">Legal</a>
@@ -73,7 +90,12 @@
                         class="text-decoration-none text-secondary small m-0 p-0">Accessibility</a>
                 </div>
             </div>
-            <div class="spotify-right m-1 bg-grey rounded-2 ">
+
+            <!-- left library end -->
+
+            <!-- right songs start -->
+
+            <div class="spotify-right position-relative m-1 bg-grey rounded-2 ">
                 <div class="row m-0">
                     <div class="card-group gap-1 mt-3">
                         <div class="card rounded-3 px-1 position-relative">
@@ -121,11 +143,30 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- playbar start -->
+
+                <div class="row m-0 p-2 playbar position-absolute bottom-0 w-100 rounded-5">
+                    <div class="songinfo"></div>
+                    <div class="controls d-flex align-items-center justify-content-center gap-3 fs-4 ">
+                        <i class="fa-solid fa-backward-step border-icon"></i>
+                        <i class="fa-solid fa-play border-icon"></i>
+                        <i class="fa-solid fa-forward-step border-icon"></i>
+                    </div>
+                    <div class="songtime"></div>
+                </div>
+
+                <!-- playbar end -->
+
             </div>
+
+            <!-- right songs start -->
+
         </div>
 
     </div>
 
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
