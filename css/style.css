@@ -10,7 +10,7 @@
 }
 
 .spotify-left{
-    width: 23vw;
+    width: 23%;
     min-height: 87vh;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .spotify-right{
-    width: 77vw;
+    width: 77%;
 }
 
 .spotify-right .card{
@@ -47,11 +47,27 @@
     bottom: 0;
 }
 
+.songInfo{
+    width: 100%;
+}
+
+.songInfo .songname{
+    width: 45%;
+}
+
+.songInfo .controls{
+    width: 25%;
+}
+
+.songInfo .songtime{
+    width: 30%;
+}
+
 .seekbar{
     padding-block: 0.75px;
     bottom: 0.75em;
-    left: 0.75em;
-    width: 98% !important;
+    left: 1.5em;
+    width: 96% !important;
 }
 
 .seekbar-circle{
@@ -61,7 +77,7 @@
     background: #1f1e1e;
     transition: 0.5s;
     top: -0.3em;
-    left: -0.3em;
+    left: 0;
 }
 
 /* Utility CSS start */
@@ -87,4 +103,47 @@
     filter: invert(0.7);
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
 /* Utility CSS end */
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .spotify-left {
+    left: -100%;
+    position: absolute;
+    width: 0em;
+    background: rebeccapurple;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    /* transition: left 0.3s ease, opacity 0.3s ease; */
+  }
+
+  .spotify-right {
+    width: 100%;
+    transition: width 0.3s ease;
+  }
+
+  .card-title{
+    font-size: 14px;
+    transition: width 0.3s ease;
+  }
+
+  .card-text{
+    font-size: 10px;
+    transition: width 0.3s ease;
+  }
+
+.searchbar input{
+    display: none;
+    transition: width 0.3s ease;
+}
+
+  .install-app,.sign-up{
+    display: none;
+    transition: width 0.3s ease;
+  }
+
+}
