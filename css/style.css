@@ -21,7 +21,7 @@
 }
 
 .songList-info{
-    width: 85%;
+    width: 84%;
 }
 
 .spotify-right{
@@ -44,6 +44,24 @@
 
 .playbar {
     background-color: rgb(118 124 118);
+    bottom: 0;
+}
+
+.seekbar{
+    padding-block: 0.75px;
+    bottom: 0.75em;
+    left: 0.75em;
+    width: 98% !important;
+}
+
+.seekbar-circle{
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 50%;
+    background: #1f1e1e;
+    transition: 0.5s;
+    top: -0.3em;
+    left: -0.3em;
 }
 
 /* Utility CSS start */
