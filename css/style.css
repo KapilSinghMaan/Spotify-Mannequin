@@ -4,6 +4,14 @@
      font-family: "Roboto", sans-serif;
 }
 
+:root{
+    --a:0;
+}
+
+.toggle-sidebar{
+    display: none;
+}
+
 .searchbar input:focus{
     border: none;
     outline: none;
@@ -31,15 +39,18 @@
 .spotify-right .card{
     height: max-content;
     background: transparent;
-    
+    cursor: pointer;
     &:hover{
         background-color: #1f1f1f;
+        --a:1;
     }
 }
 
 .spotify-right .card-play p{
-    bottom: 6.5em;
+    bottom: 8em;
     right: 1em;
+    opacity: var(--a);
+    transition: 0.5s;
 }
 
 .playbar {
@@ -56,11 +67,11 @@
 }
 
 .songInfo .controls{
-    width: 25%;
+    width: 30%;
 }
 
-.songInfo .songtime{
-    width: 30%;
+.songInfo .songtiming{
+    width: 25%;
 }
 
 .seekbar{
@@ -78,6 +89,11 @@
     transition: 0.5s;
     top: -0.3em;
     left: 0;
+}
+
+.songtiming input[type="range"]
+{
+    accent-color: rgb(105, 104, 104);
 }
 
 /* Utility CSS start */
@@ -115,16 +131,21 @@
     position: absolute;
     width: 0em;
     background: rebeccapurple;
-    opacity: 0;
+    /* opacity: 0; */
     pointer-events: none;
-    z-index: 100;
-    /* transition: left 0.3s ease, opacity 0.3s ease; */
+    transition: 0.3s;
+    /* z-index: 1; */
   }
 
   .spotify-right {
     width: 100%;
     transition: width 0.3s ease;
+    z-index: 1;
   }
+
+  .toggle-sidebar{
+    display:flex;
+}
 
   .card-title{
     font-size: 14px;
