@@ -23,6 +23,7 @@
 
         <div class="py-1 px-2 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center py-2">
+                <div class="toggle-sidebar"><i class="fa-solid fa-bars text-white fs-3"></i></div>
                 <div class="ms-2"><img src="images/logo.svg" alt="Spotify" height="30" class="invert-color"></div>
                 <div class="home bg-grey ms-3 p-2 rounded-circle d-flex align-items-center justify-content-center"><img
                         src="images/home.svg" alt="home" height="30" class="invert-color"></div>
@@ -98,7 +99,7 @@
             <div class="spotify-right position-relative m-1 bg-grey rounded-2 ">
                  <div class="row m-0"> 
                     <div class="card-group gap-1 mt-3">
-                        <div class="card rounded-3 px-1 position-relative">
+                        <!-- <div data-folder="Haryanvi" class="card rounded-3 px-1 position-relative">
                             <div class="card-play">
                                 <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
                                         class="fa-solid fa-play"></i></p>
@@ -109,41 +110,61 @@
                                 <p class="card-text text-white ">Dhanda Nyoliwala, Ron Likhari, Miki Malang</p>
                             </div>
                         </div>
-                        <div class="card rounded-3 px-1">
+                        <div data-folder="KK" class="card rounded-3 px-1">
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c2.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Beete Lamhein Lofi Mix(From "The Train")</h5>
                                 <p class="card-text text-white ">KK</p>
                             </div>
                         </div>
-                        <div class="card rounded-3 px-1">
+                        <div data-folder="Bhajan" class="card rounded-3 px-1">
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c3.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Shree Hanuman Chalisa</h5>
                                 <p class="card-text text-white ">Hariharan</p>
                             </div>
                         </div>
-                        <div class="card rounded-3 px-1">
+                        <div data-folder="Hanuman" class="card rounded-3 px-1">
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c4.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Hanuman Chalisa (Lo-fi)</h5>
                                 <p class="card-text text-white">Rasraj Ji Maharaj</p>
                             </div>
                         </div>
-                        <div class="card rounded-3 px-1">
+                        <div data-folder="KaranAujla" class="card rounded-3 px-1">
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c5.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">For a Reason</h5>
                                 <p class="card-text text-white ">Karan Aujla, Ikky</p>
                             </div>
                         </div>
-                        <div class="card rounded-3 px-1">
+                        <div data-folder="Shubh" class="card rounded-3 px-1">
+                            <div class="card-play">
+                                <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
+                                        class="fa-solid fa-play"></i></p>
+                            </div>
                             <img src="images/c6.jpeg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Balenci</h5>
                                 <p class="card-text text-white">Shubh</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div> 
 
@@ -156,11 +177,16 @@
                     <div class="songInfo d-flex justify-content-center align-items-center">
                         <div class="songname"></div>
                         <div class="d-flex controls align-items-center gap-3 fs-4 ">
-                            <i class="fa-solid fa-backward-step border-icon cursor-pointer"></i>
+                            <i id="previous" class="fa-solid fa-backward-step border-icon cursor-pointer"></i>
                             <i id="play" class="fa-solid fa-play border-icon cursor-pointer"></i>
-                            <i class="fa-solid fa-forward-step border-icon cursor-pointer"></i>
+                            <i id="next" class="fa-solid fa-forward-step border-icon cursor-pointer"></i>
                         </div>
-                        <div class="songtime d-flex align-items-center justify-content-end"></div>
+                        <div class="songtiming d-flex align-items-center justify-content-between ">
+                            <div class="songtime d-flex align-items-center justify-content-end "></div>
+                            <div class="changevolume d-flex align-items-center justify-content-center"><i class="fa-solid fa-volume-high me-2"></i>
+                            <input type="range" class="me-2 cursor-pointer" name="volume">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
