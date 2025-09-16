@@ -1,6 +1,7 @@
 let currentSong = new Audio();
 let songs;
 let currFolder;
+let currVol;
 
 function secToMin(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -64,15 +65,15 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
     let a = await fetch(`http://127.0.0.1:5500/Songs/`);
-    
+
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
     let anchors = div.getElementsByTagName("a");
-    
+
     let cardgroup = document.querySelector(".card-group")
     let array = Array.from(anchors);
-    
+
     for (let index = 3; index < array.length; index++) {
         const e = array[index];
         if (e.href.includes("/Songs")) {
@@ -80,7 +81,7 @@ async function displayAlbums() {
 
             let a = await fetch(`http://127.0.0.1:5500/Songs/${folder}/info.json`)
             let response = await a.json();
-            cardgroup.innerHTML=cardgroup.innerHTML+`<div data-folder="${response.foldername}" class="card rounded-3 px-1">
+            cardgroup.innerHTML = cardgroup.innerHTML + `<div data-folder="${response.foldername}" class="card rounded-3 px-1">
                             <div class="card-play">
                                 <p class="position-absolute p-2 bg-success rounded-circle d-inline"><i
                                         class="fa-solid fa-play"></i></p>
@@ -104,7 +105,7 @@ async function main() {
 
     displayAlbums();
 
-    await getSongs("Songs/FarhanKhan")
+    await getSongs(`Songs/${currFolder}`)
     playMusic(songs[0], true)
 
     play.addEventListener("click", () => {
@@ -132,6 +133,8 @@ async function main() {
     })
 
     next.addEventListener("click", () => {
+        console.log(songs);
+        
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         if ((index + 1) < songs.length) {
             playMusic(songs[index + 1]);
@@ -146,11 +149,24 @@ async function main() {
     })
 
     document.querySelector(".changevolume").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-        currentSong.volume = parseInt(e.target.value) / 100;
+        currVol=parseInt(e.target.value) / 100;
+        currentSong.volume = currVol;
     })
 
-    console.log(document.querySelector(".changevolume>i"));
-    
+    document.querySelector(".changevolume>i").addEventListener("click", e => {
+        if (document.querySelector(".changevolume>i").classList.contains("fa-volume-high")) {
+            document.querySelector(".changevolume>i").classList.remove("fa-volume-high");
+            document.querySelector(".changevolume>i").classList.add("fa-volume-xmark");
+            currentSong.volume=0;
+        }
+        else {
+            document.querySelector(".changevolume>i").classList.remove("fa-volume-xmark");
+            document.querySelector(".changevolume>i").classList.add("fa-volume-high");
+            currentSong.volume=currVol;
+        }
+
+    })
+
 }
 
 main()
