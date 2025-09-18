@@ -51,15 +51,24 @@ async function getSongs(folder) {
             playMusic(e.querySelector(".songList-info").firstElementChild.innerHTML.trim())
         })
     })
+
+    return songs
 }
 
 const playMusic = (track, pause = false) => {
+    
     currentSong.src = `/${currFolder}/` + track;
     if (!pause) {
         currentSong.play();
         play.classList.add("fa-pause")
     }
-    document.querySelector(".songname").innerHTML = decodeURI(track);
+    if(track)
+    {
+        document.querySelector(".songname").innerHTML = decodeURI(track);
+    }
+    else{
+        document.querySelector(".songname").innerHTML = "Select any album";   
+    }
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 }
 
@@ -97,6 +106,7 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
             songs = await getSongs(`Songs/${item.currentTarget.dataset.folder}`);
+            playMusic(songs[0]);
         })
     })
 }
@@ -134,7 +144,6 @@ async function main() {
 
     next.addEventListener("click", () => {
         console.log(songs);
-        
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         if ((index + 1) < songs.length) {
             playMusic(songs[index + 1]);
